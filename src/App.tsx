@@ -1,48 +1,35 @@
-
+import './App.css'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import {
   WalletModalProvider,
   WalletDisconnectButton,
-  WalletMultiButton,
-
+  WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import '@solana/wallet-adapter-react-ui/styles.css';
-import Airdrop from './components/Airdrop';
-import { ShowBalance } from './components/ShowSolBalance';
-import { useMemo } from 'react';
-import { clusterApiUrl } from '@solana/web3.js';
-import { SignMessage } from './components/signMessage';
-import { SendTokens } from './components/sendToken';
+import RequestAirdrop from './componenets/RequestAirdrop';
+import  { SendTokens } from './componenets/sendToken';
+
+
 function App() {
 
-  const network = WalletAdapterNetwork.Devnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+
   return (
-    <ConnectionProvider endpoint={endpoint}>
+    <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/6AmDWOqyYR46J3sGghnHIkg_04v5YzZb"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ width: "100vh", display: "flex", justifyContent: "space-around", alignItems: "center" }} >
 
             <WalletMultiButton />
             <WalletDisconnectButton />
 
           </div>
-          <hr />
-          <Airdrop></Airdrop>
-          <hr />
-          <ShowBalance />
-          <hr />
-          <SignMessage />
-          <hr />
+          <RequestAirdrop />
           <SendTokens />
-          <hr />
+
 
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
-
   )
 }
 
