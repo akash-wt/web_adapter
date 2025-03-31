@@ -20,7 +20,8 @@ export default function RequestAirdrop() {
     return (
         <>
             <div style={{ width: "100vh", display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
-                <input type="number" name="amount" id="amount" value={amount} onChange={(e) => { setAmount(Number(e.target.value)) }} />
+                <input type="number" name="amount" id="amount" value={amount} onChange={(e) => { setAmount(Number(e.target.value)) }} 
+                placeholder="amount"/>
                 <br />
                 <button onClick={Airdrop}>Request Airdrop</button>
             </div>

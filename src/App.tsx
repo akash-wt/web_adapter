@@ -7,7 +7,8 @@ import {
 } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
 import RequestAirdrop from './componenets/RequestAirdrop';
-import  { SendTokens } from './componenets/sendToken';
+import SendToken from './componenets/sendToken';
+import SignMsg from './componenets/SignMsg';
 
 
 function App() {
@@ -23,8 +24,10 @@ function App() {
             <WalletDisconnectButton />
 
           </div>
+          <br /><br />
           <RequestAirdrop />
-          <SendTokens />
+          <SendToken />
+          <SignMsg />
 
 
         </WalletModalProvider>
