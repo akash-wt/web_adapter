@@ -26,7 +26,7 @@ export default function RequestAirdrop() {
                 <button onClick={Airdrop}>Request Airdrop</button>
             </div>
 
-            Balance : {<ShowBal />
+         {<ShowBal />
             }</>
 
     )
